@@ -29,7 +29,7 @@ The name of the module you use as the meta of the module definition is 'AssetUpd
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
 | id | String/Number | The id of the mod on the server |
-| provider | String | The provider of updates for the mod/assets. Currently implemented: `modworkshop`, `Paydaymods` and `Payday2Concepts` |
+| provider | String | The provider of updates for the mod/assets. Currently implemented: `modworkshop`, `github` and `Payday2Concepts` |
 | install\_directory | String | The directory that contains the folder for the mod |
 | use\_local\_path | Boolean | \(Defaults to true\) Determines if the folder of the mod should be used as the folder that is being updated |
 | use\_local\_dir | Boolean | \(Defaults to true\) Determines if the location of the mod should be used as the installation directory |
@@ -39,8 +39,8 @@ The name of the module you use as the meta of the module definition is 'AssetUpd
 | important | Boolean | If set to true, every time the mod will receive an update, the game will notify the user with a dialog \(By default, the update will show up in the updates counter in the main menu without notifying the user directly\). Use it only if updating the mod is crucial \(For example, BeardLib updates are important\) |
 | is\_standalone | Boolean | \(Defaults to true\) Mostly used for custom maps. Where users can download them by joining a game. However, this shouldn't apply to all maps due to some maps needing assets/code which means the map cannot run without these important assets/code. Setting `is_standalone` to false will disable it. And, users will simply disconnect from the server if they don't have the map |
 | dont\_delete | Boolean | \(Defaults to false\)  Doesn't delete the mod folder when updating. This is useful if your mod contains things users might want to change and you don't wish for that content to be deleted each update |
-
-\|dont\_delete\|Boolean\|\|
+| branch | String | The github branch to get files from. only used if release is false |
+| release | Boolean | If set to true, get the latest github release instead of latest commit |
 
 ### Example
 
@@ -53,6 +53,25 @@ This example is what you would put inside your main node within your [mod config
 Where `id` is the unique identifier on Modworkshop. So this example will update the directory of the mod with the mod with id '16212' and `version` being the current version set in the mod page on Modworkshop. You can set it as any string/number you'd like. Numbers are recommended.
 
 The example is what you'll see in most mods. Some old mods may have `use_local_path` & `use_local_dir` set to true. These parameters are already set to true by default.
+
+### Github Example
+For commit based updating:
+
+```markup
+<AssetUpdates id="Luffyyy/BeardLib-Editor" provider="github" branch="master"/>
+```
+
+The `id` for github provider updates is `owner/repository` and `branch` should be the branch you wish to update from, most of the time this should be master or main.
+
+Upon the next commit, This will create a `version_file` in the root of your mod with the hash of the commit, you will want to add this to your .gitignore.
+
+For release based updating:
+
+```markup
+<AssetUpdates id="simon-wh/PAYDAY-2-BeardLib" provider="github" release="true" version="4.4"/>
+```
+
+The `version` should be the same as the tag of the release.
 
 ### Custom providers
 
