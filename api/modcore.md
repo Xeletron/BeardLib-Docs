@@ -76,5 +76,3 @@ Functions to be used by `core_class` functions. Just create the functions in the
 
 Download template here: [https://github.com/Luffyyy/BeardLib-Templates/tree/master/BLT-Template](https://github.com/Luffyyy/BeardLib-Templates/tree/master/BLT-Template)
 
-beep
-
