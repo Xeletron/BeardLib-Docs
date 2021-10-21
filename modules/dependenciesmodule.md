@@ -24,7 +24,7 @@ The name of the module you use as the meta of the module definition is 'Dependen
 | :--- | :--- | :--- |
 | name | String | The name of the mod to depend on. \[REQ\] For `mod_overrides` or `map` mods, this will be the name in main.xml. For `blt` mods, it will be the name in mod.txt or main.xml if present |
 | type | String | The type of mod the dependency is. Options are `blt`, `mod_overrides` and `map` \[Default: `blt`\] |
-| version | String | The minimum required version of the dependency. \[OPTIONAL\] |
+| min_ver | String | The minimum required version of the dependency. \[OPTIONAL\] |
 | id | String/Number | The id of the mod on the server. \[OPTIONAL\] Having `id` and `provider` will add a [ModAssetModule](https://luffyyy.gitbook.io/beardlib/modules/modassetmodule) to download the dependency. |
 | provider | String | The provider of updates for the mod/assets. \[OPTIONAL\] Having `id` and `provider` will add a [ModAssetModule](https://luffyyy.gitbook.io/beardlib/modules/modassetmodule) to download the dependency. |
 
@@ -34,9 +34,9 @@ This example is what you would put inside your main node within your [mod config
 
 ```markup
 <Dependencies>
-    <Dependency name="Custom Attachment Points" version="2.3.1" id="22546" provider="modworkshop"/>
+    <Dependency name="Custom Attachment Points" min_ver="2.3.1" id="22546" provider="modworkshop"/>
     <Dependency name="My Cool Mask" type="mod_overrides"/>
-    <Dependency name="TheGreatMaze" type="map" version="1.1" id="27125" provider="modworkshop"/>
+    <Dependency name="TheGreatMaze" type="map" min_ver="1.1" id="27125" provider="modworkshop"/>
 </Dependencies>
 ```
 
