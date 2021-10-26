@@ -38,6 +38,7 @@
   * [Weapon Skin](modules/weaponskinmodule.md)
   * [Adding your own modules](modules/modulesmodule.md)
   * [ElementsModule](modules/elementsmodule.md)
+  * [DependenciesModule](modules/dependenciesmodule.md)
 * [API](api/README.md)
   * [BeardLib Class](api/beardlib-class.md)
   * [Hooks](api/hooks.md)
