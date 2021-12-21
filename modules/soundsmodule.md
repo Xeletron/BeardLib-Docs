@@ -63,7 +63,7 @@ _those values are mostly optional_ _if defined from the sounds node, all sounds 
 This example is what you would put inside your main node within your [mod config](https://github.com/GreatBigBushyBeard/PAYDAY-2-BeardLib/wiki/Module-Config)
 
 ```markup
-<Sounds direcotry="sounds">
+<Sounds directory="sounds">
     <sounds directory="m4" prefix="regular">
         <sound id="m4_fire_single" path="fire.ogg"/>
         <sound id="m4_tighten" path="enter_sight.ogg"/>
